@@ -1,6 +1,5 @@
 package rm.com.driverine.ui.presenter
 
-import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -11,18 +10,33 @@ import org.jetbrains.anko.ctx
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.ui.adapter.DriverListAdapter
 import rm.com.driverine.ui.view.layout.DriversListLayout
+import rm.com.driverine.ui.view.layout.add
 
 /**
  * Created by alex
  */
 
-class DriversListFragment : Fragment() {
+class DriversListFragment : BaseFragment() {
+
+	override val name: String
+		get() = "Автовладельцы"
 
 	override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View =
 			DriversListLayout().createView(AnkoContext.create(ctx, this))
 
 	override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
+	}
+
+	override fun onResume() {
+		super.onResume()
+		owner.add.show()
+		// TODO reload entities
+	}
+
+	override fun onPause() {
+		super.onPause()
+		owner.add.hide()
 	}
 }
 

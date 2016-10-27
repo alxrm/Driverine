@@ -17,17 +17,19 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		layout.setContentView(this)
 
-		switchFragment(DriversListFragment())
+		switchFragment(next = DriversListFragment(), shouldAdd = false)
 
 		add.onClick { switchFragment(AdditionFragment()) }
 	}
 
-	fun switchFragment(next: Fragment) {
-		fragmentManager
-				.beginTransaction()
-				.replace(R.id.container, next)
-				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-				.addToBackStack(null)
-				.commit()
-	}
+	fun switchFragment(next: Fragment, shouldAdd: Boolean = true) =
+			fragmentManager
+					.beginTransaction()
+					.apply {
+						replace(R.id.container, next)
+						setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+						if (shouldAdd) addToBackStack(null)
+					}
+					.commit()
+
 }
