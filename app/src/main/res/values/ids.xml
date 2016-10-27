@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="toolbar" type="id"/>
+	<item name="appbar" type="id"/>
+	<item name="add_driver" type="id"/>
+	<item name="container" type="id"/>
+	<item name="drivers_list" type="id"/>
+	<item name="driver_name" type="id"/>
+	<item name="driver_relatives" type="id"/>
+	<item name="driver_car" type="id"/>
+</resources>
