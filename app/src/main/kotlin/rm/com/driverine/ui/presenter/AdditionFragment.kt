@@ -12,7 +12,7 @@ import rm.com.driverine.ui.view.layout.AdditionLayout
  * Created by alex
  */
 
-class AdditionFragment : BaseFragment() {
+class AdditionFragment : PageFragment() {
 
 	override val name: String
 		get() = "Добавить"

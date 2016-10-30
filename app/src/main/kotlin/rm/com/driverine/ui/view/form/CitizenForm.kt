@@ -6,5 +6,4 @@ import android.widget.RelativeLayout
  * Created by alex
  */
 fun RelativeLayout.citizenForm() {
-
 }

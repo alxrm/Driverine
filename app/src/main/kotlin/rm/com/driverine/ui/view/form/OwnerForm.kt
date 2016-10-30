@@ -12,7 +12,7 @@ import rm.com.driverine.R
  * Created by alex
  */
 
-fun _LinearLayout.carForm() {
+fun _LinearLayout.ownerForm() {
 	verticalLayout {
 		lparams(width = matchParent, height = wrapContent) {
 			topMargin = dip(8)
@@ -20,7 +20,7 @@ fun _LinearLayout.carForm() {
 
 		backgroundColor = Color.WHITE
 
-		textView("Автомобиль") {
+		textView("Владелец") {
 			lparams {
 				topMargin = dip(18)
 				bottomMargin = dip(8)
@@ -40,7 +40,7 @@ fun _LinearLayout.carForm() {
 			isClickable = true
 			backgroundResource = selectableBg()
 
-			textView("BMW") {
+			textView("Иванов И. И.") {
 				lparams {
 					horizontalMargin = dip(16)
 					verticalMargin = dip(2)
@@ -50,7 +50,7 @@ fun _LinearLayout.carForm() {
 				textSize = 16F
 			}
 
-			textView("Марка") {
+			textView("ФИО") {
 				lparams {
 					horizontalMargin = dip(16)
 					verticalMargin = dip(2)
@@ -74,7 +74,7 @@ fun _LinearLayout.carForm() {
 			isClickable = true
 			backgroundResource = selectableBg()
 
-			textView("О 997 ОО") {
+			textView("01.09.1970") {
 				lparams {
 					horizontalMargin = dip(16)
 					verticalMargin = dip(2)
@@ -84,41 +84,7 @@ fun _LinearLayout.carForm() {
 				textSize = 16F
 			}
 
-			textView("Номер") {
-				lparams {
-					horizontalMargin = dip(16)
-					verticalMargin = dip(2)
-				}
-
-				textColor = Color.BLACK.withAlpha(0x8A)
-				textSize = 12F
-			}
-		}
-
-		view {
-			lparams(width = matchParent, height = dip(0.5F))
-			backgroundColor = color(R.color.color_separator)
-		}
-
-		verticalLayout {
-			lparams(width = matchParent, height = dip(60)) {
-				verticalGravity = Gravity.CENTER
-			}
-
-			isClickable = true
-			backgroundResource = selectableBg()
-
-			textView("Серебристый") {
-				lparams {
-					horizontalMargin = dip(16)
-					verticalMargin = dip(2)
-				}
-
-				textColor = Color.BLACK.withAlpha(0xDE)
-				textSize = 16F
-			}
-
-			textView("Цвет") {
+			textView("Дата рождения") {
 				lparams {
 					horizontalMargin = dip(16)
 					verticalMargin = dip(2)

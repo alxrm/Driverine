@@ -10,7 +10,7 @@ import rm.com.driverine.ui.view.layout.toolbar
  * Created by alex
  */
 
-abstract class BaseFragment : Fragment() {
+abstract class PageFragment : Fragment() {
 
 	abstract val name: String
 
@@ -21,8 +21,8 @@ abstract class BaseFragment : Fragment() {
 	}
 }
 
-val BaseFragment.toolbar: Toolbar
+val PageFragment.toolbar: Toolbar
 	get() = owner.toolbar
 
-val BaseFragment.owner: MainActivity
+val PageFragment.owner: MainActivity
 	get() = act as MainActivity

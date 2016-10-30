@@ -16,7 +16,7 @@ import rm.com.driverine.ui.view.layout.add
  * Created by alex
  */
 
-class DriversListFragment : BaseFragment() {
+class DriversListFragment : PageFragment() {
 
 	override val name: String
 		get() = "Автовладельцы"

@@ -12,3 +12,14 @@ fun <T: View> T.lparamsRel(
 	this@lparamsRel.layoutParams = layoutParams
 	return this
 }
+
+fun <T: View> T.lparamsLin(
+		width: Int = android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+		height: Int = android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+		init: android.widget.LinearLayout.LayoutParams.() -> Unit = {}
+): T {
+	val layoutParams = android.widget.LinearLayout.LayoutParams(width, height)
+	layoutParams.init()
+	this@lparamsLin.layoutParams = layoutParams
+	return this
+}
