@@ -12,17 +12,17 @@ import rm.com.driverine.ui.view.layout.toolbar
 
 abstract class PageFragment : Fragment() {
 
-	abstract val name: String
+  abstract val name: String
 
-	override fun onResume() {
-		super.onResume()
+  override fun onResume() {
+    super.onResume()
 
-		toolbar.title = name
-	}
+    toolbar.title = name
+  }
 }
 
 val PageFragment.toolbar: Toolbar
-	get() = owner.toolbar
+  get() = owner.toolbar
 
 val PageFragment.owner: MainActivity
-	get() = act as MainActivity
+  get() = act as MainActivity

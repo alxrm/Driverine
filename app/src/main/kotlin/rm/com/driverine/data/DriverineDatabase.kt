@@ -5,8 +5,8 @@ import com.raizlabs.android.dbflow.annotation.Database
 /**
  * Created by alex
  */
-@Database(name = DriverineDatabase.NAME, version = DriverineDatabase.VERSION,  generatedClassSeparator = "_")
+@Database(name = DriverineDatabase.NAME, version = DriverineDatabase.VERSION, generatedClassSeparator = "_")
 object DriverineDatabase {
-	const val NAME: String = "DriverineDB"
-	const val VERSION: Int = 1
+  const val NAME: String = "DriverineDB"
+  const val VERSION: Int = 1
 }

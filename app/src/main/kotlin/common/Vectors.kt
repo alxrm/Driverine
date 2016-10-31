@@ -12,6 +12,6 @@ fun View.vectorOf(id: Int): Drawable = vectorOf(resources, id)
 fun Activity.vectorOf(id: Int): Drawable = vectorOf(resources, id)
 
 fun vectorOf(res: Resources, id: Int): Drawable {
-	val drawable = VectorDrawableCompat.create(res, id, null) as Drawable
-	return DrawableCompat.wrap(drawable)
+  val drawable = VectorDrawableCompat.create(res, id, null) as Drawable
+  return DrawableCompat.wrap(drawable)
 }

@@ -12,17 +12,17 @@ import rm.com.driverine.data.DriverineDatabase
 @Table(database = DriverineDatabase::class)
 class Car : BaseModel() {
 
-	@PrimaryKey(autoincrement = true)
-	@Column
-	var id: Long = 0
+  @PrimaryKey(autoincrement = true)
+  @Column
+  var id: Long = 0
 
-	@Column
-	var number: String? = null
+  @Column
+  var number: String? = null
 
-	@Column
-	var brand: String? = null
+  @Column
+  var brand: String? = null
 
-	@Column
-	var color: String? = null
+  @Column
+  var color: String? = null
 
 }

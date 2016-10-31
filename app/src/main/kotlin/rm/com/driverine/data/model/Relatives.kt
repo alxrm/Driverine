@@ -13,18 +13,18 @@ import rm.com.driverine.data.DriverineDatabase
 @Table(database = DriverineDatabase::class)
 class Relatives : BaseModel() {
 
-	@PrimaryKey(autoincrement = true)
-	@Column
-	var id: Long = 0
+  @PrimaryKey(autoincrement = true)
+  @Column
+  var id: Long = 0
 
-	@ForeignKey
-	@Column
-	var from: Citizen? = null
+  @ForeignKey
+  @Column
+  var from: Citizen? = null
 
-	@ForeignKey
-	@Column
-	var to: Citizen? = null
+  @ForeignKey
+  @Column
+  var to: Citizen? = null
 
-	@Column
-	var type: Relationship? = null
+  @Column
+  var type: Relationship? = null
 }

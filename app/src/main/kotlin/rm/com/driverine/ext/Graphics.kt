@@ -14,14 +14,14 @@ import org.jetbrains.anko.view
  */
 
 fun shadowDrawable(): Drawable = GradientDrawable(
-		GradientDrawable.Orientation.TOP_BOTTOM,
-		intArrayOf(0x40000000, 0x00000000)
+    GradientDrawable.Orientation.TOP_BOTTOM,
+    intArrayOf(0x40000000, 0x00000000)
 )
 
 fun LinearLayout.horizontalShadow(height: Int = dip(2)) {
-	view {
-		lparamsLin(width = matchParent, height = height)
+  view {
+    lparamsLin(width = matchParent, height = height)
 
-		backgroundDrawable = shadowDrawable()
-	}
+    backgroundDrawable = shadowDrawable()
+  }
 }

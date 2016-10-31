@@ -5,13 +5,13 @@ import android.os.StrictMode
 import rm.com.driverine.BuildConfig
 
 fun assertWorkerThread(): Unit =
-		StrictMode.noteSlowCall("slow")
+    StrictMode.noteSlowCall("slow")
 
 fun isMainThread(): Boolean =
-		Looper.myLooper() == Looper.getMainLooper()
+    Looper.myLooper() == Looper.getMainLooper()
 
 fun assertMainThread(): Unit =
-		when {
-			BuildConfig.DEBUG && !isMainThread() -> error("wrong thread, buddy")
-			else                                 -> Unit
-		}
+    when {
+      BuildConfig.DEBUG && !isMainThread() -> error("wrong thread, buddy")
+      else -> Unit
+    }

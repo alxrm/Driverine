@@ -13,22 +13,22 @@ import java.util.*
 @Table(database = DriverineDatabase::class)
 class Citizen : BaseModel() {
 
-	@PrimaryKey(autoincrement = true)
-	@Column
-	var id: Long = 0
+  @PrimaryKey(autoincrement = true)
+  @Column
+  var id: Long = 0
 
-	@Column
-	var first: String? = null
+  @Column
+  var first: String? = null
 
-	@Column
-	var second: String? = null
+  @Column
+  var second: String? = null
 
-	@Column
-	var patronymic: String? = null
+  @Column
+  var patronymic: String? = null
 
-	@Column
-	var address: String? = null
+  @Column
+  var address: String? = null
 
-	@Column
-	var birthDate: Date? = null
+  @Column
+  var birthDate: Date? = null
 }

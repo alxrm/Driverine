@@ -1,4 +1,4 @@
-package rm.com.driverine.ui.form
+package rm.com.driverine.ui.view.form
 
 import android.graphics.Color
 import android.graphics.Typeface

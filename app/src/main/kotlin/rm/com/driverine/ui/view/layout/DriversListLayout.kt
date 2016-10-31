@@ -18,16 +18,16 @@ import rm.com.driverine.ui.presenter.DriversListFragment
  */
 
 class DriversListLayout : AnkoComponent<DriversListFragment> {
-	override fun createView(ui: AnkoContext<DriversListFragment>): View = with(ui) {
-		recyclerView {
-			lparams(width = matchParent, height = matchParent)
+  override fun createView(ui: AnkoContext<DriversListFragment>): View = with(ui) {
+    recyclerView {
+      lparams(width = matchParent, height = matchParent)
 
-			id = R.id.drivers_list
-			setHasFixedSize(true)
-			layoutManager = LinearLayoutManager(ctx)
-			adapter = DriverListAdapter(listOf(Driver(), Driver()))
-		}
-	}
+      id = R.id.drivers_list
+      setHasFixedSize(true)
+      layoutManager = LinearLayoutManager(ctx)
+      adapter = DriverListAdapter(listOf(Driver(), Driver()))
+    }
+  }
 }
 
 val DriversListFragment.list: RecyclerView get() = find(R.id.drivers_list)

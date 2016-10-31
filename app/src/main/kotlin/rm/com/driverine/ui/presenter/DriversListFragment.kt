@@ -18,27 +18,27 @@ import rm.com.driverine.ui.view.layout.add
 
 class DriversListFragment : PageFragment() {
 
-	override val name: String
-		get() = "Автовладельцы"
+  override val name: String
+    get() = "Автовладельцы"
 
-	override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View =
-			DriversListLayout().createView(AnkoContext.create(ctx, this))
+  override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View =
+      DriversListLayout().createView(AnkoContext.create(ctx, this))
 
-	override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-	}
+  override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+  }
 
-	override fun onResume() {
-		super.onResume()
-		owner.add.show()
-		// TODO reload entities
-	}
+  override fun onResume() {
+    super.onResume()
+    owner.add.show()
+    // TODO reload entities
+  }
 
-	override fun onPause() {
-		super.onPause()
-		owner.add.hide()
-	}
+  override fun onPause() {
+    super.onPause()
+    owner.add.hide()
+  }
 }
 
 private fun RecyclerView.update(drivers: List<Driver>) =
-		(adapter as DriverListAdapter).updateData(drivers)
+    (adapter as DriverListAdapter).updateData(drivers)

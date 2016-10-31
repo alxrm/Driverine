@@ -8,12 +8,12 @@ import rm.com.driverine.data.model.Driver
  */
 class DriverHolder(itemView: View?) : BaseHolder<Driver>(itemView) {
 
-	var onItemClick: (Driver) -> Unit = {}
+  var onItemClick: (Driver) -> Unit = {}
 
-	override fun bind(model: Driver) {
-		itemView ?: return
+  override fun bind(model: Driver) {
+    itemView ?: return
 
 
-	}
+  }
 }
 

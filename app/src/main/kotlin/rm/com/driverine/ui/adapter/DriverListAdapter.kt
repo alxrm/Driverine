@@ -11,19 +11,19 @@ import rm.com.driverine.ui.view.items.driverItemView
  */
 class DriverListAdapter(var drivers: List<Driver> = emptyList()) : RecyclerView.Adapter<DriverHolder>() {
 
-	override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DriverHolder =
-			DriverHolder(parent?.context?.driverItemView())
+  override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DriverHolder =
+      DriverHolder(parent?.context?.driverItemView())
 
-	override fun getItemCount(): Int = drivers.size
+  override fun getItemCount(): Int = drivers.size
 
-	override fun onBindViewHolder(holder: DriverHolder?, position: Int) =
-			holder?.let {
+  override fun onBindViewHolder(holder: DriverHolder?, position: Int) =
+      holder?.let {
 //				it.onItemClick =
-				it.bind(drivers[position])
-			} ?: Unit
+        it.bind(drivers[position])
+      } ?: Unit
 
-	fun updateData(drivers: List<Driver>) {
-		this.drivers = drivers
-		notifyDataSetChanged()
-	}
+  fun updateData(drivers: List<Driver>) {
+    this.drivers = drivers
+    notifyDataSetChanged()
+  }
 }

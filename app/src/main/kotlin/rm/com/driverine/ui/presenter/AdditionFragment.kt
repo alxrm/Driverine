@@ -14,14 +14,14 @@ import rm.com.driverine.ui.view.layout.AdditionLayout
 
 class AdditionFragment : PageFragment() {
 
-	override val name: String
-		get() = "Добавить"
+  override val name: String
+    get() = "Добавить"
 
-	override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View =
-			AdditionLayout().createView(AnkoContext.create(ctx, this))
+  override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View =
+      AdditionLayout().createView(AnkoContext.create(ctx, this))
 
-	override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
+  override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
 
-	}
+  }
 }

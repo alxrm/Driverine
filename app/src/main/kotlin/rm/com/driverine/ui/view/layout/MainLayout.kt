@@ -20,56 +20,56 @@ import rm.com.driverine.R
  * Created by alex
  */
 class MainLayout : AnkoComponent<MainActivity> {
-	override fun createView(ui: AnkoContext<MainActivity>): View = with(ui) {
-		relativeLayout {
-			lparams {
-				width = matchParent
-				height = matchParent
-			}
+  override fun createView(ui: AnkoContext<MainActivity>): View = with(ui) {
+    relativeLayout {
+      lparams {
+        width = matchParent
+        height = matchParent
+      }
 
-			appBarLayout(R.style.AppTheme_AppBarOverlay) {
-				lparams(width = matchParent)
+      appBarLayout(R.style.AppTheme_AppBarOverlay) {
+        lparams(width = matchParent)
 
-				id = R.id.appbar
-				fitsSystemWindows = true
+        id = R.id.appbar
+        fitsSystemWindows = true
 
-				toolbar {
-					lparams(width = matchParent)
+        toolbar {
+          lparams(width = matchParent)
 
-					id = R.id.toolbar
-					backgroundColor = color(R.color.color_primary)
-					minimumHeight = dip(56)
+          id = R.id.toolbar
+          backgroundColor = color(R.color.color_primary)
+          minimumHeight = dip(56)
 
-					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-						setPadding(0, context.statusBarHeight(), 0, 0)
-					}
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setPadding(0, context.statusBarHeight(), 0, 0)
+          }
 
-					owner.setSupportActionBar(this)
-				}
-			}
+          owner.setSupportActionBar(this)
+        }
+      }
 
-			frameLayout {
-				lparamsRel(width = matchParent, height = matchParent) {
-					below(R.id.appbar)
-				}
+      frameLayout {
+        lparamsRel(width = matchParent, height = matchParent) {
+          below(R.id.appbar)
+        }
 
-				id = R.id.container
-			}
+        id = R.id.container
+      }
 
-			floatingActionButton {
-				lparams {
-					alignParentBottom()
-					alignParentEnd()
-					margin = dip(16)
-				}
+      floatingActionButton {
+        lparams {
+          alignParentBottom()
+          alignParentEnd()
+          margin = dip(16)
+        }
 
-				id = R.id.add_driver
-				isClickable = true
-				setImageDrawable(vectorOf(R.drawable.ic_add_white_24dp))
-				rippleColor = Color.WHITE
-			}
-		}
-	}
+        id = R.id.add_driver
+        isClickable = true
+        setImageDrawable(vectorOf(R.drawable.ic_add_white_24dp))
+        rippleColor = Color.WHITE
+      }
+    }
+  }
 }
 
 val MainActivity.layout by lazy { MainLayout() }

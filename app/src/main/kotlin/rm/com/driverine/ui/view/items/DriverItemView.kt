@@ -12,22 +12,22 @@ import rm.com.driverine.R
  */
 
 fun Context.driverItemView(): View =
-		UI {
-			relativeLayout {
-				lparams(width = matchParent, height = dip(56))
+    UI {
+      relativeLayout {
+        lparams(width = matchParent, height = dip(56))
 
-				isClickable = true
-				backgroundResource = selectableBg()
+        isClickable = true
+        backgroundResource = selectableBg()
 
-				textView {
-					lparams {
-						centerVertically()
-						horizontalMargin = dip(16)
-					}
+        textView {
+          lparams {
+            centerVertically()
+            horizontalMargin = dip(16)
+          }
 
-					id = R.id.driver_name
-					text = "123"
-					textColor = Color.BLACK
-				}
-			}
-		}.view
+          id = R.id.driver_name
+          text = "123"
+          textColor = Color.BLACK
+        }
+      }
+    }.view

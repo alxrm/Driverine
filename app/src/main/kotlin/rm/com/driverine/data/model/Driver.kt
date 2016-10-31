@@ -13,15 +13,15 @@ import rm.com.driverine.data.DriverineDatabase
 @Table(database = DriverineDatabase::class)
 class Driver : BaseModel() {
 
-	@PrimaryKey(autoincrement = true)
-	@Column
-	var id: Long = 0
+  @PrimaryKey(autoincrement = true)
+  @Column
+  var id: Long = 0
 
-	@ForeignKey
-	@Column
-	var owner: Citizen? = null
+  @ForeignKey
+  @Column
+  var owner: Citizen? = null
 
-	@ForeignKey
-	@Column
-	var car: Car? = null
+  @ForeignKey
+  @Column
+  var car: Car? = null
 }
