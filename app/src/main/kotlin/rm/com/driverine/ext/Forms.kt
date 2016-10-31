@@ -105,7 +105,7 @@ inline fun _LinearLayout.dialog(
       dialogView = verticalLayout(init = init)
     }
 
-    okButton {
+    positiveButton("СОХРАНИТЬ") {
       dialogView?.forEachChild {
         it as? EditText ?: return@forEachChild
 
@@ -115,7 +115,7 @@ inline fun _LinearLayout.dialog(
       setTextByTag(key, onChange(data))
     }
 
-    noButton {
+    negativeButton("ОТМЕНИТЬ") {
       dismiss()
     }
 

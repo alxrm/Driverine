@@ -9,7 +9,10 @@ import rm.com.driverine.ui.fragment.AdditionFragment
 /**
  * Created by alex
  */
-class AdditionLayout(val ownerFields: _LinearLayout.() -> Unit) : AnkoComponent<AdditionFragment> {
+class AdditionLayout(
+    val ownerInput: _LinearLayout.() -> Unit,
+    val carInput: _LinearLayout.() -> Unit
+) : AnkoComponent<AdditionFragment> {
   override fun createView(ui: AnkoContext<AdditionFragment>): View = with(ui) {
     scrollView {
       lparams(width = matchParent, height = matchParent)
@@ -19,7 +22,8 @@ class AdditionLayout(val ownerFields: _LinearLayout.() -> Unit) : AnkoComponent<
       verticalLayout {
         lparams(width = matchParent, height = wrapContent)
 
-        ownerFields()
+        ownerInput()
+        carInput()
       }
     }
   }
