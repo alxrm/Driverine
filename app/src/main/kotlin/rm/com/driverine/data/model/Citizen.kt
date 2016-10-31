@@ -21,7 +21,7 @@ class Citizen : BaseModel() {
   var first: String? = null
 
   @Column
-  var second: String? = null
+  var last: String? = null
 
   @Column
   var patronymic: String? = null

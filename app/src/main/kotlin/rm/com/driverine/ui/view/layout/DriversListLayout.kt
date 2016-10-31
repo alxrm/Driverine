@@ -11,7 +11,7 @@ import org.jetbrains.anko.recyclerview.v7.recyclerView
 import rm.com.driverine.R
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.ui.adapter.DriverListAdapter
-import rm.com.driverine.ui.presenter.DriversListFragment
+import rm.com.driverine.ui.fragment.DriversListFragment
 
 /**
  * Created by alex

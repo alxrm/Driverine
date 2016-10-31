@@ -4,12 +4,12 @@ import android.view.View
 import common.color
 import org.jetbrains.anko.*
 import rm.com.driverine.R
-import rm.com.driverine.ui.presenter.AdditionFragment
+import rm.com.driverine.ui.fragment.AdditionFragment
 
 /**
  * Created by alex
  */
-class AdditionLayout : AnkoComponent<AdditionFragment> {
+class AdditionLayout(val ownerFields: _LinearLayout.() -> Unit) : AnkoComponent<AdditionFragment> {
   override fun createView(ui: AnkoContext<AdditionFragment>): View = with(ui) {
     scrollView {
       lparams(width = matchParent, height = matchParent)
@@ -18,6 +18,8 @@ class AdditionLayout : AnkoComponent<AdditionFragment> {
 
       verticalLayout {
         lparams(width = matchParent, height = wrapContent)
+
+        ownerFields()
       }
     }
   }

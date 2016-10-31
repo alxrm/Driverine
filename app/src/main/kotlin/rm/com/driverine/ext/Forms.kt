@@ -1,4 +1,4 @@
-package rm.com.driverine.ui.view.form
+package rm.com.driverine.ext
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -10,7 +10,6 @@ import common.color
 import common.selectableBg
 import org.jetbrains.anko.*
 import rm.com.driverine.R
-import rm.com.driverine.ext.horizontalShadow
 
 /**
  * Created by alex
@@ -113,7 +112,7 @@ inline fun _LinearLayout.dialog(
         data += it.tag.toString() to it.text.toString()
       }
 
-      (findViewWithTag(key) as? TextView)?.text = onChange(data)
+      setTextByTag(key, onChange(data))
     }
 
     noButton {
@@ -136,4 +135,8 @@ fun _LinearLayout.input(inputHint: String, key: String, init: () -> String = { "
 
     setText(init())
   }
+}
+
+fun _LinearLayout.setTextByTag(key: String, text: String) {
+  (findViewWithTag(key) as? TextView)?.text = text
 }

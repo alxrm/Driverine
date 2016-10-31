@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.setContentView
-import rm.com.driverine.ui.presenter.AdditionFragment
-import rm.com.driverine.ui.presenter.DriversListFragment
+import rm.com.driverine.ui.fragment.AdditionFragment
+import rm.com.driverine.ui.fragment.DriversListFragment
 import rm.com.driverine.ui.view.layout.add
 import rm.com.driverine.ui.view.layout.layout
 

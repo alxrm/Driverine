@@ -1,4 +1,4 @@
-package rm.com.driverine.ui.presenter
+package rm.com.driverine.ui.fragment
 
 import android.app.Fragment
 import android.support.v7.widget.Toolbar
