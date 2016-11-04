@@ -9,8 +9,8 @@ import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.ctx
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.ui.adapter.DriverListAdapter
-import rm.com.driverine.ui.view.layout.DriversListLayout
-import rm.com.driverine.ui.view.layout.add
+import rm.com.driverine.ui.layout.DriversListLayout
+import rm.com.driverine.ui.layout.add
 
 /**
  * Created by alex

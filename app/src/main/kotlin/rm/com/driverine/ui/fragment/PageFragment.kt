@@ -4,7 +4,7 @@ import android.app.Fragment
 import android.support.v7.widget.Toolbar
 import org.jetbrains.anko.act
 import rm.com.driverine.MainActivity
-import rm.com.driverine.ui.view.layout.toolbar
+import rm.com.driverine.ui.layout.toolbar
 
 /**
  * Created by alex

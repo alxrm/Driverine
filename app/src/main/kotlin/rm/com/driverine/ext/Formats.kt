@@ -1,9 +1,7 @@
 package rm.com.driverine.ext
 
 import common.withZeros
-import rm.com.driverine.ui.fragment.constants.KEY_INPUT_FIRST_NAME
-import rm.com.driverine.ui.fragment.constants.KEY_INPUT_LAST_NAME
-import rm.com.driverine.ui.fragment.constants.KEY_INPUT_PATRONYMIC
+import rm.com.driverine.data.model.Citizen
 import java.util.*
 
 /**
@@ -16,14 +14,11 @@ fun formatDateOf(year: Int, month: Int, day: Int): String =
 fun dateOf(year: Int, month: Int, day: Int): Date =
     Calendar.getInstance().apply { set(year, month, day) }.time
 
-fun Map<String, String>.formatName(): String =
-    "${this[KEY_INPUT_LAST_NAME]} ${this[KEY_INPUT_FIRST_NAME]!!.first()}. ${this[KEY_INPUT_PATRONYMIC]!!.first()}."
+fun Citizen.formatName(): String? =
+    if (last.isNullOrBlank() or first.isNullOrBlank() or patronymic.isNullOrBlank())
+      null
+    else
+      "$last ${first?.first()}. ${patronymic?.first()}."
 
 fun Map<String, String>.formatSingle(): String =
     this.values.first()
-
-fun Map<String, String>.stubOr(stub: String, action: Map<String, String>.() -> String) =
-    when {
-      all { it.value.length > 0 } -> action()
-      else -> stub
-    }
