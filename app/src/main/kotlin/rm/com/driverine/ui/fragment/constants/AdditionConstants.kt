@@ -12,6 +12,7 @@ const val KEY_INPUT_BRAND = "input_brand"
 const val KEY_INPUT_COLOR = "input_color"
 const val KEY_INPUT_NUMBER = "input_number"
 const val KEY_INPUT_RELATIVE = "input_relative"
+const val KEY_INPUT_TYPE = "input_type"
 
 const val PLACEHOLDER_NAME = "Иванов. И. И."
 const val PLACEHOLDER_BIRTH = "01.01.1970"

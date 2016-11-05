@@ -49,8 +49,8 @@ class FormAdapter(var elements: List<FormElement> = emptyList()) : RecyclerView.
   override fun onBindViewHolder(holder: FormElementHolder?, position: Int) =
       holder?.let { it.bind(elements[position]) } ?: Unit
 
-  fun updateData(elements: List<FormElement>) {
-    this.elements = elements
+  fun updateData(next: List<FormElement>) {
+    elements = next
     notifyDataSetChanged()
   }
 }

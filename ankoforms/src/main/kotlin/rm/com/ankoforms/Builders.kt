@@ -18,7 +18,7 @@ import rm.com.ankoforms.input.TextFormInput
  * Created by alex
  */
 
-class __FormBuilder<H : Fragment>(val host: H) {
+class FormBuilder<F : Fragment>(val host: F) {
 
   val formElements = mutableListOf<FormElement>()
 
@@ -31,20 +31,20 @@ class __FormBuilder<H : Fragment>(val host: H) {
   fun separator() =
       formElements.add(SeparatorFormElement())
 
-  inline fun field(init: InputFormField<H>.() -> Unit): InputFormField<H> {
-    val f = InputFormField<H>().apply(init)
+  inline fun field(init: InputFormField<F>.() -> Unit): InputFormField<F> {
+    val f = InputFormField<F>().apply(init)
     formElements.add(f)
     return f
   }
 
-  inline fun buttonField(init: ButtonFormField<H>.() -> Unit): ButtonFormField<H> {
-    val f = ButtonFormField<H>().apply(init)
+  inline fun buttonField(init: ButtonFormField<F>.() -> Unit): ButtonFormField<F> {
+    val f = ButtonFormField<F>().apply(init)
     formElements.add(f)
     return f
   }
 
-  inline fun listField(init: ListFormField<H>.() -> Unit): ListFormField<H> {
-    val f = ListFormField<H>().apply(init)
+  inline fun listField(init: ListFormField<F>.() -> Unit): ListFormField<F> {
+    val f = ListFormField<F>().apply(init)
     formElements.add(f)
     return f
   }
@@ -54,8 +54,8 @@ class __FormBuilder<H : Fragment>(val host: H) {
       key: String,
       onChange: (Map<String, String>) -> Unit = {},
       filler: () -> String = { "" }
-  ): InputFormField<H> {
-    val f = InputFormField<H>().apply {
+  ): InputFormField<F> {
+    val f = InputFormField<F>().apply {
       fieldName = name
       dataFiller = filler
 
@@ -75,80 +75,80 @@ class __FormBuilder<H : Fragment>(val host: H) {
     return f
   }
 
-  inline fun <T> list(data: List<T> = emptyList(), transform: ListFormField<H>.(T) -> Unit) =
+  inline fun <T> list(data: List<T> = emptyList(), transform: ListFormField<F>.(T) -> Unit) =
       data.map({ listField { transform(it) } })
 
-  inline fun InputFormField<H>.inputDialog(init: InputDialogForm<H>.() -> Unit) =
-      dialog(InputDialogForm<H>()) { dialogName = fieldName; init() }
+  inline fun InputFormField<F>.inputDialog(init: InputDialogForm<F>.() -> Unit) =
+      dialog(InputDialogForm<F>()) { dialogName = fieldName; init() }
 
-  inline fun InputFormField<H>.layoutDialog(init: LayoutDialogForm<H>.() -> Unit) =
-      dialog(LayoutDialogForm<H>(), init)
+  inline fun InputFormField<F>.layoutDialog(init: LayoutDialogForm<F>.() -> Unit) =
+      dialog(LayoutDialogForm<F>(), init)
 
-  inline fun InputFormField<H>.customDialog(init: CustomDialogForm<H>.() -> Unit) =
-      dialog(CustomDialogForm<H>(), init)
+  inline fun InputFormField<F>.customDialog(init: CustomDialogForm<F>.() -> Unit) =
+      dialog(CustomDialogForm<F>(), init)
 
-  fun InputFormField<H>.onFieldClick(init: H.() -> Unit) {
+  fun InputFormField<F>.onFieldClick(init: F.() -> Unit) {
     customDialog { onOpen = init }
   }
 
-  inline fun <D : DialogForm<H>> InputFormField<H>.dialog(dialogForm: D, init: D.() -> Unit) {
+  inline fun <D : DialogForm<F>> InputFormField<F>.dialog(dialogForm: D, init: D.() -> Unit) {
     dialog = dialogForm.apply {
       holder = host
       init()
     }
   }
 
-  inline fun ButtonFormField<H>.inputDialog(init: InputDialogForm<H>.() -> Unit) =
-      dialog(InputDialogForm<H>(), init)
+  inline fun ButtonFormField<F>.inputDialog(init: InputDialogForm<F>.() -> Unit) =
+      dialog(InputDialogForm<F>(), init)
 
-  inline fun ButtonFormField<H>.layoutDialog(init: LayoutDialogForm<H>.() -> Unit) =
-      dialog(LayoutDialogForm<H>(), init)
+  inline fun ButtonFormField<F>.layoutDialog(init: LayoutDialogForm<F>.() -> Unit) =
+      dialog(LayoutDialogForm<F>(), init)
 
-  inline fun ButtonFormField<H>.customDialog(init: CustomDialogForm<H>.() -> Unit) =
-      dialog(CustomDialogForm<H>(), init)
+  inline fun ButtonFormField<F>.customDialog(init: CustomDialogForm<F>.() -> Unit) =
+      dialog(CustomDialogForm<F>(), init)
 
-  fun ButtonFormField<H>.onFieldClick(init: H.() -> Unit) {
+  fun ButtonFormField<F>.onFieldClick(init: F.() -> Unit) {
     customDialog { onOpen = init }
   }
 
-  inline fun <D : DialogForm<H>> ButtonFormField<H>.dialog(dialogForm: D, init: D.() -> Unit) {
+  inline fun <D : DialogForm<F>> ButtonFormField<F>.dialog(dialogForm: D, init: D.() -> Unit) {
     dialog = dialogForm.apply {
       holder = host
       init()
     }
   }
 
-  inline fun ListFormField<H>.inputDialog(init: InputDialogForm<H>.() -> Unit) =
-      dialog(InputDialogForm<H>(), init)
+  inline fun ListFormField<F>.inputDialog(init: InputDialogForm<F>.() -> Unit) =
+      dialog(InputDialogForm<F>(), init)
 
-  inline fun ListFormField<H>.layoutDialog(init: LayoutDialogForm<H>.() -> Unit) =
-      dialog(LayoutDialogForm<H>(), init)
+  inline fun ListFormField<F>.layoutDialog(init: LayoutDialogForm<F>.() -> Unit) =
+      dialog(LayoutDialogForm<F>(), init)
 
-  inline fun ListFormField<H>.customDialog(init: CustomDialogForm<H>.() -> Unit) =
-      dialog(CustomDialogForm<H>(), init)
+  inline fun ListFormField<F>.customDialog(init: CustomDialogForm<F>.() -> Unit) =
+      dialog(CustomDialogForm<F>(), init)
 
-  fun ListFormField<H>.onFieldClick(init: H.() -> Unit) {
+  fun ListFormField<F>.onFieldClick(init: F.() -> Unit) {
     customDialog { onOpen = init }
   }
 
-  inline fun <D : DialogForm<H>> ListFormField<H>.dialog(dialogForm: D, init: D.() -> Unit) {
+  inline fun <D : DialogForm<F>> ListFormField<F>.dialog(dialogForm: D, init: D.() -> Unit) {
     dialog = dialogForm.apply {
       holder = host
       init()
     }
   }
 
-  inline fun InputDialogForm<H>.textInput(init: TextFormInput.() -> Unit) {
+  inline fun InputDialogForm<F>.textInput(init: TextFormInput.() -> Unit) {
     inputs += TextFormInput().apply(init)
   }
 
-  inline fun InputDialogForm<H>.selectorInput(init: SpinnerFormInput.() -> Unit) {
+  inline fun InputDialogForm<F>.selectorInput(init: SpinnerFormInput.() -> Unit) {
     inputs += SpinnerFormInput().apply(init)
   }
 }
 
-inline fun <T : Fragment> T.form(init: __FormBuilder<T>.() -> Unit): List<FormElement> {
-  val builder = __FormBuilder(this)
+inline fun <F : Fragment> F.form(init: FormBuilder<F>.() -> Unit): List<FormElement> {
+  val builder = FormBuilder(this)
   builder.init()
   return builder.formElements.toList()
 }

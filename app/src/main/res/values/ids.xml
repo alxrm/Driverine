@@ -15,6 +15,7 @@
 	<item name="form_field_input_name" type="id"/>
 	<item name="form_field_list_primary" type="id"/>
 	<item name="form_field_list_secondary" type="id"/>
+	<item name="form_fields" type="id"/>
 
 	<item name="form_field_button" type="id"/>
 

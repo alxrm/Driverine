@@ -1,6 +1,9 @@
 package rm.com.driverine.ui.fragment.events
 
+import rm.com.driverine.data.model.Citizen
+import rm.com.driverine.data.model.Relative
 import rm.com.driverine.ext.dateOf
+import rm.com.driverine.ext.relationships
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.constants.*
 
@@ -11,11 +14,13 @@ import rm.com.driverine.ui.fragment.constants.*
 val AdditionFragment.onNameChanged: (inputs: Map<String, String>) -> Unit
   get() = {
     driver.owner?.apply {
-      first = it[KEY_INPUT_FIRST_NAME]
       last = it[KEY_INPUT_LAST_NAME]
+      first = it[KEY_INPUT_FIRST_NAME]
       patronymic = it[KEY_INPUT_PATRONYMIC]
       save()
     }
+
+    refreshForm()
   }
 
 val AdditionFragment.onAddressChanged: (inputs: Map<String, String>) -> Unit
@@ -24,6 +29,8 @@ val AdditionFragment.onAddressChanged: (inputs: Map<String, String>) -> Unit
       address = it[KEY_INPUT_ADDRESS]
       save()
     }
+
+    refreshForm()
   }
 
 val AdditionFragment.onDateSet: (year: Int, monthOfYear: Int, dayOfMonth: Int) -> Unit
@@ -32,6 +39,8 @@ val AdditionFragment.onDateSet: (year: Int, monthOfYear: Int, dayOfMonth: Int) -
       birthDate = dateOf(year, month, day)
       save()
     }
+
+    refreshForm()
   }
 
 val AdditionFragment.onBrandChange: (Map<String, String>) -> Unit
@@ -40,6 +49,8 @@ val AdditionFragment.onBrandChange: (Map<String, String>) -> Unit
       brand = it[KEY_INPUT_BRAND]
       save()
     }
+
+    refreshForm()
   }
 
 val AdditionFragment.onColorChange: (Map<String, String>) -> Unit
@@ -48,6 +59,8 @@ val AdditionFragment.onColorChange: (Map<String, String>) -> Unit
       color = it[KEY_INPUT_COLOR]
       save()
     }
+
+    refreshForm()
   }
 
 val AdditionFragment.onNumberChange: (Map<String, String>) -> Unit
@@ -55,5 +68,26 @@ val AdditionFragment.onNumberChange: (Map<String, String>) -> Unit
     driver.car?.apply {
       number = it[KEY_INPUT_NUMBER]
       save()
+    }
+
+    refreshForm()
+  }
+
+val AdditionFragment.onRelativeAdded: (Map<String, String>) -> Unit
+  get() = {
+    Relative().apply {
+      carOwner = driver.owner
+      type = relationships[it[KEY_INPUT_TYPE]]
+      relative = Citizen().apply {
+        last = it[KEY_INPUT_LAST_NAME]
+        first = it[KEY_INPUT_FIRST_NAME]
+        patronymic = it[KEY_INPUT_PATRONYMIC]
+        insert()
+      }
+
+      relatives += this
+      insert()
+
+      refreshForm()
     }
   }
