@@ -1,13 +1,12 @@
 package rm.com.driverine.ui.fragment
 
 import android.os.Bundle
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.ctx
-import rm.com.driverine.data.model.Driver
+import rm.com.driverine.data.repo.DriversRepository
 import rm.com.driverine.ui.adapter.DriverListAdapter
 import rm.com.driverine.ui.layout.DriversListLayout
 import rm.com.driverine.ui.layout.add
@@ -21,6 +20,8 @@ class DriversListFragment : PageFragment() {
   override val name: String
     get() = "Автовладельцы"
 
+  val driverAdapter = DriverListAdapter()
+
   override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View =
       DriversListLayout().createView(AnkoContext.create(ctx, this))
 
@@ -31,14 +32,18 @@ class DriversListFragment : PageFragment() {
   override fun onResume() {
     super.onResume()
     owner.add.show()
-    // TODO reload entities
+
+    updateDrivers()
   }
 
   override fun onPause() {
     super.onPause()
     owner.add.hide()
   }
-}
 
-private fun RecyclerView.update(drivers: List<Driver>) =
-    (adapter as DriverListAdapter).updateData(drivers)
+  fun updateDrivers() {
+    val drivers = DriversRepository.allDrivers()
+
+    driverAdapter.updateData(drivers)
+  }
+}

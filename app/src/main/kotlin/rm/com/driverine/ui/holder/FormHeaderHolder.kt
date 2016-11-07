@@ -11,7 +11,7 @@ import rm.com.driverine.R
  */
 class FormHeaderHolder(itemView: View?) : FormElementHolder(itemView) {
 
-  val headerText by lazy { findOptional<TextView>(R.id.form_header_text) }
+  private val headerText by lazy { findOptional<TextView>(R.id.form_header_text) }
 
   override fun bind(model: FormElement) {
     val (name) = model as HeaderFormElement

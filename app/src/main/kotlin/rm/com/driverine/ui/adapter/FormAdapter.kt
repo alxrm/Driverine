@@ -8,7 +8,7 @@ import rm.com.ankoforms.elements.SeparatorFormElement
 import rm.com.ankoforms.fields.ButtonFormField
 import rm.com.ankoforms.fields.InputFormField
 import rm.com.ankoforms.fields.ListFormField
-import rm.com.driverine.FormFieldInputHolder
+import rm.com.driverine.ui.holder.FormFieldInputHolder
 import rm.com.driverine.ui.holder.*
 import rm.com.driverine.ui.item.*
 

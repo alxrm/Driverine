@@ -11,7 +11,7 @@ import java.util.*
 fun Date.formatDate(): String {
   val (year, month, day) = this.asCalendar()
 
-  return "${day.withZeros()}.${month.withZeros() + 1}.$year"
+  return "${day.withZeros()}.${(month + 1).withZeros()}.$year"
 }
 
 fun dateOf(year: Int, month: Int, day: Int): Date =

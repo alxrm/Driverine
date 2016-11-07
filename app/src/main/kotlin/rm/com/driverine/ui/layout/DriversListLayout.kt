@@ -9,8 +9,6 @@ import org.jetbrains.anko.find
 import org.jetbrains.anko.matchParent
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 import rm.com.driverine.R
-import rm.com.driverine.data.model.Driver
-import rm.com.driverine.ui.adapter.DriverListAdapter
 import rm.com.driverine.ui.fragment.DriversListFragment
 
 /**
@@ -25,7 +23,7 @@ class DriversListLayout : AnkoComponent<DriversListFragment> {
       id = R.id.drivers_list
       setHasFixedSize(true)
       layoutManager = LinearLayoutManager(ctx)
-      adapter = DriverListAdapter(listOf(Driver(), Driver()))
+      adapter = owner.driverAdapter
     }
   }
 }

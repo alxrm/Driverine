@@ -12,8 +12,8 @@ import rm.com.driverine.ui.fragment.AdditionFragment
  */
 class FormFieldListHolder(itemView: View?) : FormElementHolder(itemView) {
 
-  val primary by lazy { findOptional<TextView>(R.id.form_field_list_primary) }
-  val secondary by lazy { findOptional<TextView>(R.id.form_field_list_secondary) }
+  private val primary by lazy { findOptional<TextView>(R.id.form_field_list_primary) }
+  private val secondary by lazy { findOptional<TextView>(R.id.form_field_list_secondary) }
 
   @Suppress("UNCHECKED_CAST")
   override fun bind(model: FormElement) {

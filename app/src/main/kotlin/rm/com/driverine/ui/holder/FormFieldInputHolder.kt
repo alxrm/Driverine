@@ -1,21 +1,19 @@
-package rm.com.driverine
+package rm.com.driverine.ui.holder
 
 import android.view.View
 import android.widget.TextView
 import rm.com.ankoforms.elements.FormElement
 import rm.com.ankoforms.fields.InputFormField
+import rm.com.driverine.R
 import rm.com.driverine.ui.fragment.AdditionFragment
-import rm.com.driverine.ui.holder.FormElementHolder
-import rm.com.driverine.ui.holder.findOptional
-import rm.com.driverine.ui.holder.onClick
 
 /**
  * Created by alex
  */
 class FormFieldInputHolder(itemView: View?) : FormElementHolder(itemView) {
 
-  val data by lazy { findOptional<TextView>(R.id.form_field_input_data) }
-  val name by lazy { findOptional<TextView>(R.id.form_field_input_name) }
+  private val data by lazy { findOptional<TextView>(R.id.form_field_input_data) }
+  private val name by lazy { findOptional<TextView>(R.id.form_field_input_name) }
 
   @Suppress("UNCHECKED_CAST")
   override fun bind(model: FormElement) {

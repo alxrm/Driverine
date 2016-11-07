@@ -12,7 +12,7 @@ import rm.com.driverine.ui.fragment.AdditionFragment
  */
 class FormFieldButtonHolder(itemView: View?) : FormElementHolder(itemView) {
 
-  val name by lazy { findOptional<TextView>(R.id.form_field_button) }
+  private val name by lazy { findOptional<TextView>(R.id.form_field_button) }
 
   @Suppress("UNCHECKED_CAST")
   override fun bind(model: FormElement) {

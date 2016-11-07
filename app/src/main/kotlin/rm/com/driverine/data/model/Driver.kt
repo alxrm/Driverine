@@ -18,10 +18,8 @@ class Driver : BaseModel() {
   var id: Long = 0
 
   @ForeignKey
-  @Column
   var owner: Citizen? = null
 
   @ForeignKey
-  @Column
   var car: Car? = null
 }

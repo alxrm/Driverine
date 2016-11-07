@@ -1,6 +1,7 @@
 package rm.com.driverine.ui.item
 
 import android.graphics.Color
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import common.selectableBg
@@ -20,15 +21,33 @@ fun ViewGroup?.driverItemView(): View? =
         isClickable = true
         backgroundResource = selectableBg()
 
-        textView {
-          lparams {
-            centerVertically()
-            horizontalMargin = dip(16)
+        verticalLayout {
+          lparams(width = matchParent, height = matchParent) {
+            verticalGravity = Gravity.CENTER
           }
 
-          id = R.id.driver_name
-          text = "123"
-          textColor = Color.BLACK
+          textView {
+            lparams {
+              horizontalMargin = dip(16)
+              verticalMargin = dip(2)
+            }
+
+            id = R.id.driver_name
+            textColor = Color.BLACK.withAlpha(0xDE)
+            textSize = 16F
+          }
+
+          textView {
+            lparams {
+              horizontalMargin = dip(16)
+              verticalMargin = dip(2)
+            }
+
+            id = R.id.driver_birth
+            textColor = Color.BLACK.withAlpha(0x8A)
+            textSize = 12F
+          }
         }
+
       }
     }
