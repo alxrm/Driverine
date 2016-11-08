@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import common.inUiDelayed
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.ctx
 import rm.com.driverine.data.repo.DriversRepository
@@ -31,9 +32,11 @@ class DriversListFragment : PageFragment() {
 
   override fun onResume() {
     super.onResume()
-    owner.add.show()
 
-    updateDrivers()
+    inUiDelayed(250) {
+      owner.add.show()
+      updateDrivers()
+    }
   }
 
   override fun onPause() {
