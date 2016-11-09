@@ -12,12 +12,12 @@ import rm.com.driverine.data.model.Car
 import rm.com.driverine.data.model.Citizen
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.data.model.Relative
-import rm.com.driverine.util.ext.isNotValid
 import rm.com.driverine.ui.adapter.FormAdapter
 import rm.com.driverine.ui.fragment.form.carForm
 import rm.com.driverine.ui.fragment.form.ownerForm
 import rm.com.driverine.ui.fragment.form.relativesForm
 import rm.com.driverine.ui.layout.AdditionLayout
+import rm.com.driverine.util.ext.isNotValid
 
 /**
  * Created by alex
@@ -27,7 +27,7 @@ class AdditionFragment : PageFragment() {
   override val name: String
     get() = "Добавить"
 
-  val driver: Driver = Driver().apply {
+  val driver = Driver().apply {
     owner = Citizen().apply { insert() }
     car = Car().apply { insert() }
     insert()

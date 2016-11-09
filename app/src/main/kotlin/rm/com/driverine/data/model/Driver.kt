@@ -13,9 +13,9 @@ import rm.com.driverine.data.DriverineDatabase
 @Table(database = DriverineDatabase::class)
 class Driver : BaseModel() {
 
-  @PrimaryKey(autoincrement = true)
+  @PrimaryKey
   @Column
-  var id: Long = 0
+  var id: Long = System.currentTimeMillis()
 
   @ForeignKey
   var owner: Citizen? = null

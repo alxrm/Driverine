@@ -10,6 +10,7 @@
 	<item name="driver_birth" type="id"/>
 	<item name="driver_relatives" type="id"/>
 	<item name="driver_car" type="id"/>
+	<item name="driver_car_info" type="id"/>
 
 	<item name="form_header_text" type="id"/>
 	<item name="form_field_input" type="id"/>

@@ -12,9 +12,9 @@ import rm.com.driverine.data.DriverineDatabase
 @Table(database = DriverineDatabase::class)
 class Car : BaseModel() {
 
-  @PrimaryKey(autoincrement = true)
+  @PrimaryKey
   @Column
-  var id: Long = 0
+  var id: Long = System.currentTimeMillis()
 
   @Column
   var number: String? = null

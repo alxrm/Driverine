@@ -13,9 +13,9 @@ import java.util.*
 @Table(database = DriverineDatabase::class)
 class Citizen : BaseModel() {
 
-  @PrimaryKey(autoincrement = true)
+  @PrimaryKey
   @Column
-  var id: Long = 0
+  var id: Long = System.currentTimeMillis()
 
   @Column
   var first: String? = null

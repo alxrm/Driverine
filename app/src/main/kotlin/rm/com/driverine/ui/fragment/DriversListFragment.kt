@@ -16,6 +16,7 @@ import rm.com.driverine.data.repo.hasChildren
 import rm.com.driverine.data.repo.hasMarriage
 import rm.com.driverine.data.repo.under40
 import rm.com.driverine.ui.adapter.DriverListAdapter
+import rm.com.driverine.ui.fragment.events.onOpenDriver
 import rm.com.driverine.ui.layout.DriversListLayout
 import rm.com.driverine.ui.layout.add
 import rm.com.driverine.util.OnActionExpandListenerAdapter
@@ -54,6 +55,8 @@ class DriversListFragment : PageFragment(), OnActionExpandListenerAdapter {
 
   override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+
+    driverAdapter.onItemClick = onOpenDriver
   }
 
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
@@ -93,16 +96,16 @@ class DriversListFragment : PageFragment(), OnActionExpandListenerAdapter {
     owner.add.hide()
   }
 
-  private fun searchDrivers(criteria: String) {
-    refreshDrivers(DriversRepository.findDrivers(criteria))
-  }
-
   private fun refreshDrivers(drivers: List<Driver> = DriversRepository.allDrivers()) {
     val withFilters = drivers.filter { driver ->
       filters.values.all { it.disabled || it.predicate(driver) }
     }
 
     driverAdapter.updateData(withFilters)
+  }
+
+  private fun searchDrivers(criteria: String) {
+    refreshDrivers(DriversRepository.findDrivers(criteria))
   }
 
   private fun applyFilterIfNeeded(item: MenuItem) {

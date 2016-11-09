@@ -2,10 +2,10 @@ package rm.com.driverine.ui.fragment.events
 
 import rm.com.driverine.data.model.Citizen
 import rm.com.driverine.data.model.Relative
-import rm.com.driverine.util.ext.dateOf
-import rm.com.driverine.util.ext.relationships
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.constants.*
+import rm.com.driverine.util.ext.dateOf
+import rm.com.driverine.util.ext.relationships
 
 /**
  * Created by alex
@@ -86,7 +86,7 @@ val AdditionFragment.onRelativeAdded: (Map<String, String>) -> Unit
       }
 
       relatives += this
-      insert()
+      save()
 
       refreshForm()
     }
