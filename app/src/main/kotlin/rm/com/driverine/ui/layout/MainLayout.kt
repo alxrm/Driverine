@@ -5,10 +5,7 @@ import android.os.Build
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.Toolbar
 import android.view.View
-import common.color
-import common.lparamsRel
-import common.statusBarHeight
-import common.vectorOf
+import common.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.design.appBarLayout
@@ -40,7 +37,7 @@ class MainLayout : AnkoComponent<MainActivity> {
           backgroundColor = color(R.color.color_primary)
           minimumHeight = dip(56)
 
-          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+          doFromSdk(Build.VERSION_CODES.LOLLIPOP) {
             setPadding(0, context.statusBarHeight(), 0, 0)
           }
 
@@ -65,7 +62,7 @@ class MainLayout : AnkoComponent<MainActivity> {
 
         id = R.id.add_driver
         isClickable = true
-        setImageDrawable(vectorOf(R.drawable.ic_add_white_24dp))
+        imageDrawable = vectorOf(R.drawable.ic_add_white_24dp)
         rippleColor = Color.WHITE
       }
     }

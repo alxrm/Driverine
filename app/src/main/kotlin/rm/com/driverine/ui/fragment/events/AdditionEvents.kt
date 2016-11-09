@@ -2,8 +2,8 @@ package rm.com.driverine.ui.fragment.events
 
 import rm.com.driverine.data.model.Citizen
 import rm.com.driverine.data.model.Relative
-import rm.com.driverine.ext.dateOf
-import rm.com.driverine.ext.relationships
+import rm.com.driverine.util.ext.dateOf
+import rm.com.driverine.util.ext.relationships
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.constants.*
 

@@ -18,11 +18,9 @@ class Relative : BaseModel() {
   var id: Long = 0
 
   @ForeignKey
-  @Column
   var relative: Citizen? = null
 
   @ForeignKey
-  @Column
   var carOwner: Citizen? = null
 
   @Column

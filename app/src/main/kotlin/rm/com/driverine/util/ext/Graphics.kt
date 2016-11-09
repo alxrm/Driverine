@@ -1,4 +1,4 @@
-package rm.com.driverine.ext
+package rm.com.driverine.util.ext
 
 import android.content.Context
 import android.graphics.drawable.Drawable

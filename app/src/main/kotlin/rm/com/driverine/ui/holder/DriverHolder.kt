@@ -5,8 +5,8 @@ import android.widget.TextView
 import org.jetbrains.anko.onClick
 import rm.com.driverine.R
 import rm.com.driverine.data.model.Driver
-import rm.com.driverine.ext.formatDate
-import rm.com.driverine.ext.formatName
+import rm.com.driverine.util.ext.formatDate
+import rm.com.driverine.util.ext.formatName
 
 /**
  * Created by alex

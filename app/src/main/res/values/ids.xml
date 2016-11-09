@@ -6,6 +6,7 @@
 	<item name="container" type="id"/>
 	<item name="drivers_list" type="id"/>
 	<item name="driver_name" type="id"/>
+	<item name="driver_credits" type="id"/>
 	<item name="driver_birth" type="id"/>
 	<item name="driver_relatives" type="id"/>
 	<item name="driver_car" type="id"/>

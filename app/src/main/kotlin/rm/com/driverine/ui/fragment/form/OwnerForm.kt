@@ -6,8 +6,8 @@ import common.component2
 import common.component3
 import common.orStub
 import rm.com.ankoforms.FormBuilder
-import rm.com.driverine.ext.formatDate
-import rm.com.driverine.ext.formatName
+import rm.com.driverine.util.ext.formatDate
+import rm.com.driverine.util.ext.formatName
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.constants.*
 import rm.com.driverine.ui.fragment.events.onAddressChanged

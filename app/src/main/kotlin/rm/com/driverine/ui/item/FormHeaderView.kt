@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import common.color
 import org.jetbrains.anko.*
 import rm.com.driverine.R
-import rm.com.driverine.ext.inflateOptional
+import rm.com.driverine.util.ext.inflateOptional
 
 /**
  * Created by alex

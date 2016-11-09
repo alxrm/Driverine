@@ -7,6 +7,7 @@ import android.support.annotation.*
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
+import android.widget.ImageView
 import org.jetbrains.anko.dip
 
 private val TV = TypedValue()
@@ -64,3 +65,7 @@ fun View.dipF(what: Float): Float =
 
 fun View.dipF(what: Int): Float =
     dip(what).toFloat()
+
+var ImageView.imageDrawable: Drawable
+  get() = error("Property does not have a getter")
+  set(value) = setImageDrawable(value)

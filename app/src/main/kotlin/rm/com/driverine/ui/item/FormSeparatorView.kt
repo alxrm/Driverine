@@ -2,8 +2,8 @@ package rm.com.driverine.ui.item
 
 import android.view.View
 import android.view.ViewGroup
-import rm.com.driverine.ext.horizontalShadow
-import rm.com.driverine.ext.inflateOptional
+import rm.com.driverine.util.ext.horizontalShadow
+import rm.com.driverine.util.ext.inflateOptional
 
 /**
  * Created by alex

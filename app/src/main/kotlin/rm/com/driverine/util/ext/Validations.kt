@@ -1,4 +1,4 @@
-package rm.com.driverine.ext
+package rm.com.driverine.util.ext
 
 import rm.com.driverine.data.model.Car
 import rm.com.driverine.data.model.Citizen

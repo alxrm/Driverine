@@ -12,7 +12,7 @@ import rm.com.driverine.data.model.Car
 import rm.com.driverine.data.model.Citizen
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.data.model.Relative
-import rm.com.driverine.ext.isNotValid
+import rm.com.driverine.util.ext.isNotValid
 import rm.com.driverine.ui.adapter.FormAdapter
 import rm.com.driverine.ui.fragment.form.carForm
 import rm.com.driverine.ui.fragment.form.ownerForm

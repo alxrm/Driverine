@@ -21,6 +21,14 @@ class TextFormInput : FormInput {
         hint = inputHint
 
         setText(filler())
+
+        textChangedListener {
+          afterTextChanged {
+            val inputStr = it?.toString().orEmpty()
+
+            if (!validator(inputStr)) error = "Неверный формат"
+          }
+        }
       }
     }
   }

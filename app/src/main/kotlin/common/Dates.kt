@@ -12,6 +12,9 @@ fun Date?.asCalendar(): Calendar =
       else -> Calendar.getInstance().apply { time = this@asCalendar }
     }
 
+var Calendar.year: Int
+  set(value) = set(Calendar.YEAR, value)
+  get() = component1()
 
 operator fun Calendar.component1() = get(Calendar.YEAR)
 operator fun Calendar.component2() = get(Calendar.MONTH)

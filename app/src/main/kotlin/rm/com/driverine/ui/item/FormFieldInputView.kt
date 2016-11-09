@@ -8,7 +8,7 @@ import common.color
 import common.selectableBg
 import org.jetbrains.anko.*
 import rm.com.driverine.R
-import rm.com.driverine.ext.inflateOptional
+import rm.com.driverine.util.ext.inflateOptional
 
 /**
  * Created by alex
