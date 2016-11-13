@@ -14,6 +14,8 @@ fun Driver?.isNotValid() =
       else -> owner.isNotValid() || car.isNotValid()
     }
 
+fun Driver?.isValid(): Boolean = !isNotValid()
+
 fun Citizen?.isNotValid() =
     when {
       this == null -> true

@@ -5,7 +5,7 @@ import common.year
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.data.model.Relationship
 import rm.com.driverine.data.model.Relative
-import rm.com.driverine.util.ext.isNotValid
+import rm.com.driverine.util.ext.isValid
 import java.util.*
 
 /**
@@ -18,22 +18,8 @@ object DriversRepository {
       Select().from(Driver::class.java)
           .queryList()
           .toList()
-          .filterNot { it.isNotValid() }
-
-  fun findDrivers(criteria: String): List<Driver> =
-      Select().from(Driver::class.java)
-          .queryList()
-          .toList()
-          .filterNot { it.isNotValid() }
-          .filter {
-            it.owner!!.let {
-              it.first!!.contains(criteria)
-                  || it.last!!.contains(criteria)
-                  || it.patronymic!!.contains(criteria)
-            }
-          }
+          .filter(Driver::isValid)
 }
-
 
 fun Driver.relatives(): List<Relative> =
     Select()
@@ -56,3 +42,10 @@ fun Driver.hasChildren(): Boolean =
 
 fun Driver.under40(): Boolean =
     (owner?.birthDate?.time ?: -1) > Calendar.getInstance().apply { year -= 40 }.timeInMillis
+
+infix fun Driver.matches(query: String) =
+    owner?.let {
+      it.first!!.contains(query, ignoreCase = true)
+          || it.last!!.contains(query, ignoreCase = true)
+          || it.patronymic!!.contains(query, ignoreCase = true)
+    } ?: false

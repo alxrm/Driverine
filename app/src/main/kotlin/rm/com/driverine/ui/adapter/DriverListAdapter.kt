@@ -9,7 +9,7 @@ import rm.com.driverine.ui.item.driverItemView
 /**
  * Created by alex
  */
-class DriverListAdapter(var drivers: List<Driver> = emptyList()) : RecyclerView.Adapter<DriverHolder>() {
+class DriverListAdapter(private var drivers: List<Driver> = emptyList()) : RecyclerView.Adapter<DriverHolder>() {
 
   var onItemClick: (Driver) -> Unit = {}
 
