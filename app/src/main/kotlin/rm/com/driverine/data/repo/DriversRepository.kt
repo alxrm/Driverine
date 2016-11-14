@@ -1,8 +1,11 @@
 package rm.com.driverine.data.repo
 
 import com.raizlabs.android.dbflow.sql.language.Select
+import common.inUI
+import common.inWorker
 import common.year
 import rm.com.driverine.data.model.Driver
+import rm.com.driverine.data.model.Filter
 import rm.com.driverine.data.model.Relationship
 import rm.com.driverine.data.model.Relative
 import rm.com.driverine.util.ext.isValid
@@ -19,6 +22,22 @@ object DriversRepository {
           .queryList()
           .toList()
           .filter(Driver::isValid)
+
+  fun someDrivers(query: String, filters: Map<Int, Filter>, answer: (List<Driver>) -> Unit) {
+    inWorker {
+      val res = allDrivers()
+          .filter { driver ->
+            filters.values.all { it.disabled or it.predicate(driver) }
+          }
+          .filter {
+            it matches query
+          }
+
+      inUI {
+        answer(res)
+      }
+    }
+  }
 }
 
 fun Driver.relatives(): List<Relative> =

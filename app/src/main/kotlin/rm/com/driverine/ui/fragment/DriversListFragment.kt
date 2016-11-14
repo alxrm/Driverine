@@ -13,7 +13,10 @@ import org.jetbrains.anko.ctx
 import rm.com.driverine.R
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.data.model.Filter
-import rm.com.driverine.data.repo.*
+import rm.com.driverine.data.repo.DriversRepository
+import rm.com.driverine.data.repo.hasChildren
+import rm.com.driverine.data.repo.hasMarriage
+import rm.com.driverine.data.repo.under40
 import rm.com.driverine.ui.adapter.DriverListAdapter
 import rm.com.driverine.ui.fragment.events.onOpenDriver
 import rm.com.driverine.ui.layout.DriversListLayout
@@ -117,15 +120,11 @@ class DriversListFragment : PageFragment(), OnActionExpandListenerAdapter {
   }
 
   private fun refreshDrivers() {
-    cachedDrivers = DriversRepository.allDrivers()
-        .filter { driver ->
-          filters.values.all { it.disabled or it.predicate(driver) }
-        }
-        .filter {
-          it matches searchQuery
-        }
+    DriversRepository.someDrivers(searchQuery, filters) {
+      cachedDrivers = it
 
-    driverAdapter.updateData(cachedDrivers)
+      driverAdapter.updateData(cachedDrivers)
+    }
   }
 
   private fun applyFilterIfNeeded(item: MenuItem) {
