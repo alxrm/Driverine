@@ -120,7 +120,7 @@ class DriversListFragment : PageFragment(), OnActionExpandListenerAdapter {
   }
 
   private fun refreshDrivers() {
-    DriversRepository.someDrivers(searchQuery, filters) {
+    DriversRepository.someDrivers(searchQuery, filters.values.toList()) {
       cachedDrivers = it
 
       driverAdapter.updateData(cachedDrivers)

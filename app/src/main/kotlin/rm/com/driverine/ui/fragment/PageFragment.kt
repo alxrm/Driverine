@@ -15,6 +15,8 @@ abstract class PageFragment : Fragment() {
 
   abstract val name: String
 
+  var isClosed = false
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setHasOptionsMenu(true)
@@ -24,6 +26,11 @@ abstract class PageFragment : Fragment() {
     super.onResume()
 
     toolbar.title = name
+  }
+
+  override fun onDestroy() {
+    isClosed = true
+    super.onDestroy()
   }
 }
 

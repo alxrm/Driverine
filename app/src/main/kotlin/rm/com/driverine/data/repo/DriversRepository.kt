@@ -23,18 +23,28 @@ object DriversRepository {
           .toList()
           .filter(Driver::isValid)
 
-  fun someDrivers(query: String, filters: Map<Int, Filter>, answer: (List<Driver>) -> Unit) {
+  fun someDrivers(query: String, filters: List<Filter>, answer: (List<Driver>) -> Unit) =
+      inWorker {
+        val res = allDrivers()
+            .filter { driver ->
+              filters.all { it.disabled or it.predicate(driver) }
+            }
+            .filter {
+              it matches query
+            }
+
+        inUI {
+          answer(res)
+        }
+      }
+
+
+  fun driverById(driverId: Long, answer: (Driver) -> Unit) {
     inWorker {
-      val res = allDrivers()
-          .filter { driver ->
-            filters.values.all { it.disabled or it.predicate(driver) }
-          }
-          .filter {
-            it matches query
-          }
+      val driver = allDrivers().first { it.id == driverId }
 
       inUI {
-        answer(res)
+        answer(driver)
       }
     }
   }
