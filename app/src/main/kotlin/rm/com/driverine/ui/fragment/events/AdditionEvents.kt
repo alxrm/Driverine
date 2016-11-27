@@ -93,6 +93,7 @@ val AdditionFragment.onRelativeAdded: (Map<String, String>) -> Unit
         last = it[KEY_INPUT_LAST_NAME]
         first = it[KEY_INPUT_FIRST_NAME]
         patronymic = it[KEY_INPUT_PATRONYMIC]
+        experience = it[KEY_INPUT_EXPERIENCE].toIntSafely(1)
         insert()
       }
 

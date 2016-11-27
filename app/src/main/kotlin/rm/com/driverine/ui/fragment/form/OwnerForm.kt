@@ -75,8 +75,19 @@ fun FormBuilder<AdditionFragment>.ownerForm() {
       driver.owner?.address.orStub(PLACEHOLDER_ADDRESS)
     }
 
-    singleField("Стаж", KEY_INPUT_EXPERIENCE, onExperienceChanged) {
-      "${driver.owner?.experience ?: 1} год"
+    field {
+      fieldName = "Стаж"
+      dataFiller = { "${driver.owner?.experience ?: 1} год" }
+
+      inputDialog {
+        onClose = onExperienceChanged
+
+        textInput {
+          inputHint = "Стаж(в годах)"
+          filler = { "${driver.owner?.experience ?: 1}"}
+          key = KEY_INPUT_EXPERIENCE
+        }
+      }
     }
 
     separator()

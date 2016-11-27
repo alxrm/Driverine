@@ -3,12 +3,12 @@ package rm.com.driverine.ui.fragment.form
 import common.orStub
 import rm.com.ankoforms.FormBuilder
 import rm.com.driverine.data.model.Relative
-import rm.com.driverine.util.ext.formatName
-import rm.com.driverine.util.ext.relationships
-import rm.com.driverine.util.ext.toReadableString
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.constants.*
 import rm.com.driverine.ui.fragment.events.onRelativeAdded
+import rm.com.driverine.util.ext.formatName
+import rm.com.driverine.util.ext.relationships
+import rm.com.driverine.util.ext.toReadableString
 
 /**
  * Created by alex
@@ -45,6 +45,11 @@ fun FormBuilder<AdditionFragment>.relativesForm(createdRelatives: List<Relative>
         textInput {
           inputHint = "Отчество"
           key = KEY_INPUT_PATRONYMIC
+        }
+
+        textInput {
+          inputHint = "Стаж"
+          key = KEY_INPUT_EXPERIENCE
         }
 
         selectorInput {
