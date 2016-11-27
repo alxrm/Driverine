@@ -1,6 +1,8 @@
-package rm.com.driverine.ui.item
+package rm.com.driverine.ui.layout.item
 
 import android.graphics.Color
+import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import common.color
 import common.selectableBg
@@ -12,7 +14,7 @@ import rm.com.driverine.util.ext.inflateOptional
  * Created by alex
  */
 
-fun ViewGroup?.formFieldListView() =
+fun ViewGroup?.formFieldInputView(): View? =
     inflateOptional {
       verticalLayout {
         lparams(width = matchParent)
@@ -20,18 +22,20 @@ fun ViewGroup?.formFieldListView() =
         isClickable = true
         backgroundColor = Color.WHITE
 
-        relativeLayout {
-          lparams(width = matchParent, height = dip(48))
+        verticalLayout {
+          lparams(width = matchParent, height = dip(56)) {
+            verticalGravity = Gravity.CENTER
+          }
 
           backgroundResource = selectableBg()
 
           textView {
             lparams {
               horizontalMargin = dip(16)
-              centerVertically()
+              verticalMargin = dip(2)
             }
 
-            id = R.id.form_field_list_primary
+            id = R.id.form_field_input_data
             textColor = Color.BLACK.withAlpha(0xDE)
             textSize = 16F
           }
@@ -39,13 +43,12 @@ fun ViewGroup?.formFieldListView() =
           textView {
             lparams {
               horizontalMargin = dip(16)
-              centerVertically()
-              alignParentEnd()
+              verticalMargin = dip(2)
             }
 
-            id = R.id.form_field_list_secondary
-            textColor = color(R.color.color_accent)
-            textSize = 16F
+            id = R.id.form_field_input_name
+            textColor = Color.BLACK.withAlpha(0x8A)
+            textSize = 12F
           }
         }
 

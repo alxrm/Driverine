@@ -14,7 +14,6 @@ import java.util.*
 /**
  * Created by alex
  */
-
 object DriversRepository {
 
   fun allDrivers(): List<Driver> =

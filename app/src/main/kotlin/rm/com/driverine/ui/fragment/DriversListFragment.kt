@@ -19,9 +19,9 @@ import rm.com.driverine.data.repo.hasMarriage
 import rm.com.driverine.data.repo.under40
 import rm.com.driverine.ui.adapter.DriverListAdapter
 import rm.com.driverine.ui.fragment.events.onOpenDriver
-import rm.com.driverine.ui.layout.DriversListLayout
-import rm.com.driverine.ui.layout.add
-import rm.com.driverine.ui.layout.list
+import rm.com.driverine.ui.layout.screens.DriversListLayout
+import rm.com.driverine.ui.layout.screens.add
+import rm.com.driverine.ui.layout.screens.list
 import rm.com.driverine.util.OnActionExpandListenerAdapter
 import rm.com.driverine.util.onItemActions
 

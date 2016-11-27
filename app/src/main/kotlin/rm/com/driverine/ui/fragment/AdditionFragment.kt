@@ -19,8 +19,8 @@ import rm.com.driverine.ui.fragment.constants.EXTRAS_KEY_DRIVER_ID
 import rm.com.driverine.ui.fragment.form.carForm
 import rm.com.driverine.ui.fragment.form.ownerForm
 import rm.com.driverine.ui.fragment.form.relativesForm
-import rm.com.driverine.ui.layout.AdditionLayout
-import rm.com.driverine.ui.layout.form
+import rm.com.driverine.ui.layout.screens.AdditionLayout
+import rm.com.driverine.ui.layout.screens.form
 import rm.com.driverine.util.ext.formatName
 import rm.com.driverine.util.ext.isNotValid
 

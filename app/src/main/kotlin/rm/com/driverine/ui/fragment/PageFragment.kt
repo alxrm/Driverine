@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import org.jetbrains.anko.act
 import rm.com.driverine.MainActivity
-import rm.com.driverine.ui.layout.toolbar
+import rm.com.driverine.ui.layout.screens.toolbar
 
 /**
  * Created by alex

@@ -1,5 +1,6 @@
 package rm.com.driverine.ui.fragment.events
 
+import common.toIntSafely
 import rm.com.driverine.data.model.Citizen
 import rm.com.driverine.data.model.Relative
 import rm.com.driverine.ui.fragment.AdditionFragment
@@ -33,10 +34,20 @@ val AdditionFragment.onAddressChanged: (inputs: Map<String, String>) -> Unit
     refreshForm()
   }
 
-val AdditionFragment.onDateSet: (year: Int, monthOfYear: Int, dayOfMonth: Int) -> Unit
-  get() = { year, month, day ->
+val AdditionFragment.onExperienceChanged: (inputs: Map<String, String>) -> Unit
+  get() = {
     driver.owner?.apply {
-      birthDate = dateOf(year, month, day)
+      experience = it[KEY_INPUT_EXPERIENCE].toIntSafely(1)
+      save()
+    }
+
+    refreshForm()
+  }
+
+val AdditionFragment.onDateSet: (year: Int, monthOfYear: Int, dayOfMonth: Int) -> Unit
+  get() = { year: Int, monthOfYear: Int, dayOfMonth: Int ->
+    driver.owner?.apply {
+      birthDate = dateOf(year, monthOfYear, dayOfMonth)
       save()
     }
 

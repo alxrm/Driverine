@@ -6,13 +6,14 @@ import common.component2
 import common.component3
 import common.orStub
 import rm.com.ankoforms.FormBuilder
-import rm.com.driverine.util.ext.formatDate
-import rm.com.driverine.util.ext.formatName
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.constants.*
 import rm.com.driverine.ui.fragment.events.onAddressChanged
 import rm.com.driverine.ui.fragment.events.onDateSet
+import rm.com.driverine.ui.fragment.events.onExperienceChanged
 import rm.com.driverine.ui.fragment.events.onNameChanged
+import rm.com.driverine.util.ext.formatDate
+import rm.com.driverine.util.ext.formatName
 import java.util.*
 
 /**
@@ -72,6 +73,10 @@ fun FormBuilder<AdditionFragment>.ownerForm() {
 
     singleField("Адрес", KEY_INPUT_ADDRESS, onAddressChanged) {
       driver.owner?.address.orStub(PLACEHOLDER_ADDRESS)
+    }
+
+    singleField("Стаж", KEY_INPUT_EXPERIENCE, onExperienceChanged) {
+      "${driver.owner?.experience ?: 1} год"
     }
 
     separator()

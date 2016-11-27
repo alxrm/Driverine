@@ -1,4 +1,4 @@
-package rm.com.driverine.ui.layout
+package rm.com.driverine.ui.layout.screens
 
 import android.graphics.Color
 import android.os.Build

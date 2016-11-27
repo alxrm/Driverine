@@ -11,8 +11,8 @@ import org.jetbrains.anko.onClick
 import org.jetbrains.anko.setContentView
 import rm.com.driverine.ui.fragment.AdditionFragment
 import rm.com.driverine.ui.fragment.DriversListFragment
-import rm.com.driverine.ui.layout.add
-import rm.com.driverine.ui.layout.layout
+import rm.com.driverine.ui.layout.screens.add
+import rm.com.driverine.ui.layout.screens.layout
 
 class MainActivity : AppCompatActivity() {
 

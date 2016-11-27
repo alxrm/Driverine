@@ -7,8 +7,8 @@ import org.jetbrains.anko.onClick
 import rm.com.driverine.R
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.data.repo.relatives
-import rm.com.driverine.ui.item.carDialog
-import rm.com.driverine.ui.item.relativesDialog
+import rm.com.driverine.ui.layout.item.carDialog
+import rm.com.driverine.ui.layout.item.relativesDialog
 import rm.com.driverine.util.ext.formatDate
 import rm.com.driverine.util.ext.formatName
 

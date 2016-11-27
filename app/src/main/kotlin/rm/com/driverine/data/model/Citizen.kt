@@ -31,4 +31,7 @@ class Citizen : BaseModel() {
 
   @Column
   var birthDate: Date? = null
+
+  @Column
+  var experience: Int = 1
 }

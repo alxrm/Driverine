@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import rm.com.driverine.data.model.Driver
 import rm.com.driverine.ui.holder.DriverHolder
-import rm.com.driverine.ui.item.driverItemView
+import rm.com.driverine.ui.layout.item.driverItemView
 
 /**
  * Created by alex

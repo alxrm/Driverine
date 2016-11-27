@@ -6,6 +6,7 @@ package rm.com.driverine.ui.fragment.constants
 
 const val EXTRAS_KEY_DRIVER_ID = "extras_driver_id"
 
+const val KEY_INPUT_EXPERIENCE = "input_experience"
 const val KEY_INPUT_ADDRESS = "input_address"
 const val KEY_INPUT_LAST_NAME = "input_last"
 const val KEY_INPUT_FIRST_NAME = "input_first"

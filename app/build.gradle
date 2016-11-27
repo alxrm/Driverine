@@ -26,6 +26,7 @@ android {
 }
 
 dependencies {
+	kapt "com.github.Raizlabs.DBFlow:dbflow-processor:$dbflow_version"
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 	compile "com.android.support:appcompat-v7:$sdk_version"
 	compile "com.android.support:recyclerview-v7:$sdk_version"
@@ -38,7 +39,6 @@ dependencies {
 	compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
 	compile "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
 
-	kapt "com.github.Raizlabs.DBFlow:dbflow-processor:$dbflow_version"
 	compile "com.github.Raizlabs.DBFlow:dbflow-core:$dbflow_version"
 	compile "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
 	compile "com.github.Raizlabs.DBFlow:dbflow:$dbflow_version"

@@ -1,4 +1,4 @@
-package rm.com.driverine.ui.item
+package rm.com.driverine.ui.layout.item
 
 import android.view.View
 import android.view.ViewGroup

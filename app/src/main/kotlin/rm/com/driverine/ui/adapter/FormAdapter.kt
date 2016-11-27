@@ -9,7 +9,7 @@ import rm.com.ankoforms.fields.ButtonFormField
 import rm.com.ankoforms.fields.InputFormField
 import rm.com.ankoforms.fields.ListFormField
 import rm.com.driverine.ui.holder.*
-import rm.com.driverine.ui.item.*
+import rm.com.driverine.ui.layout.item.*
 
 /**
  * Created by alex

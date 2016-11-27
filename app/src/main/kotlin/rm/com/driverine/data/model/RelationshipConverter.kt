@@ -1,9 +1,9 @@
 package rm.com.driverine.data.model
 
 import com.raizlabs.android.dbflow.converter.TypeConverter
-import com.raizlabs.android.dbflow.annotation.TypeConverter as TypeConverterMark
+import com.raizlabs.android.dbflow.annotation.TypeConverter as CustomTypeConverter
 
-@TypeConverterMark
+@CustomTypeConverter
 class RelationshipConverter : TypeConverter<Int, Relationship?>() {
 
   override fun getModelValue(data: Int?): Relationship? =
