@@ -1,11 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'redex'
 
 android {
 	compileSdkVersion 25
-	buildToolsVersion "24.0.0"
+	buildToolsVersion "24.0.3"
 	defaultConfig {
 		applicationId "rm.com.driverine"
 		minSdkVersion 16
